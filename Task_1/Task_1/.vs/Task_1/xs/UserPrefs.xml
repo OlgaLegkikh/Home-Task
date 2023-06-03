@@ -1,15 +1,15 @@
 ﻿<Properties StartupConfiguration="{673D5642-0D2D-48DA-BED9-477F57E18D42}|Default">
   <MonoDevelop.Ide.ItemProperties.Task__1 PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Task_1/Task_1.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Task_1.cs">
     <Files>
-      <File FileName="Task_1/Task_1.cs" Line="1" Column="1" />
+      <File FileName="Task_1.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Task_1" expanded="True">
             <Node name="Task_1" expanded="True">
-              <Node name="EmptyStruct.cs" selected="True" />
+              <Node name="Task_1.cs" selected="True" />
             </Node>
           </Node>
         </State>

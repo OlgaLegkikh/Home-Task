@@ -9,13 +9,15 @@ namespace Task_1
     {
         public static void Main(string[] args)
         {
+            string solution = "";
             for (int i = 10; i < 100; i++)
             {
                 if (i % 5 == 0)
                 {
-                    Console.WriteLine(i);
+                    solution += $"{i} ";
                 }
             }
+            Console.WriteLine(solution);
 
         }
     }
