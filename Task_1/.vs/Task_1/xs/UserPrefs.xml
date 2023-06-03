@@ -1,0 +1,25 @@
+﻿<Properties StartupConfiguration="{673D5642-0D2D-48DA-BED9-477F57E18D42}|Default">
+  <MonoDevelop.Ide.ItemProperties.Task__1 FirstBuild="True" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Task_1/EmptyStruct.cs">
+    <Files>
+      <File FileName="Task_1/EmptyStruct.cs" Line="23" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Task_1" expanded="True">
+            <Node name="Task_1" expanded="True">
+              <Node name="EmptyStruct.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|anycpu" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
