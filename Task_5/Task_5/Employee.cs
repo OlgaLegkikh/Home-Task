@@ -5,12 +5,19 @@ namespace Task_5
     {
         protected string EmployeeFirstName { get; set; }
         protected string EmployeeSecondName { get; set; }
+        protected int YearOfBirth { get; set; }
 
 
-        public Employee(string firstName, string secondName)
+        public Employee(string firstName, string secondName, int yearOfBirth)
         {
             EmployeeFirstName = firstName;
             EmployeeSecondName = secondName;
+            YearOfBirth = yearOfBirth;
+        }
+
+        public override void NewPerson(string firstName, string lastName, int yearOfBirth)
+        {
+            base.NewPerson(firstName, lastName, yearOfBirth);
         }
 
         public override void SolveProblem()

@@ -26,9 +26,8 @@ namespace Task_5
     {
         public static void Main(string[] args)
         {
-            var employee1 = new Employee();
+            var employee1 = new Employee("Маша","Иванова",1991);
 
-            employee1.NewPerson();
             employee1.SolveProblem();
         }
     }
