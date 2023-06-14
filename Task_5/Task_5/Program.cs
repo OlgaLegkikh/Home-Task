@@ -29,6 +29,7 @@ namespace Task_5
             var employee1 = new Employee("Маша","Иванова",1991);
 
             employee1.SolveProblem();
+
         }
     }
 }

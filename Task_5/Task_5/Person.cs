@@ -3,10 +3,13 @@ namespace Task_5
 {
     public abstract class Person
     {
-        protected string firstName;
-        protected string lastName;
-        protected int yearOfBirth;
-        
+        protected string FirstName;
+        protected string LastName;
+        protected int YearOfBirth;
+
+        public Person()
+        {
+        }
 
         public virtual void NewPerson(string firstName, string lastName, int yearOfBirth)
         {
@@ -16,9 +19,9 @@ namespace Task_5
 
         public abstract void SolveProblem();
 
-        protected int personAge(int yearOfBirth)
+        protected int personAge(int YearOfBirth)
         {
-            int age = DateTime.Now.Year - yearOfBirth;
+            int age = DateTime.Now.Year - YearOfBirth;
             return age;
         }
         
