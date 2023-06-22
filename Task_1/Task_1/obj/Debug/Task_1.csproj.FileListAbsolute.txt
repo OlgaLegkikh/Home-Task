@@ -1,5 +1,0 @@
-/Users/olgalehkikh/Documents/ItAcademy/Lesson 1/HomeTask/Home-Task/Task_1/Task_1/obj/Debug/Task_1.csproj.CoreCompileInputs.cache
-/Users/olgalehkikh/Documents/ItAcademy/Lesson 1/HomeTask/Home-Task/Task_1/Task_1/bin/Debug/Task_1.exe
-/Users/olgalehkikh/Documents/ItAcademy/Lesson 1/HomeTask/Home-Task/Task_1/Task_1/bin/Debug/Task_1.pdb
-/Users/olgalehkikh/Documents/ItAcademy/Lesson 1/HomeTask/Home-Task/Task_1/Task_1/obj/Debug/Task_1.exe
-/Users/olgalehkikh/Documents/ItAcademy/Lesson 1/HomeTask/Home-Task/Task_1/Task_1/obj/Debug/Task_1.pdb

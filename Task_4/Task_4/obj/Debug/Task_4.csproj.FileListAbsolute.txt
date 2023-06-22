@@ -1,6 +1,0 @@
-/Users/olgalehkikh/Documents/ItAcademy/Lesson 1/HomeTask/Home-Task/Task_4/Task_4/bin/Debug/Task_4.exe
-/Users/olgalehkikh/Documents/ItAcademy/Lesson 1/HomeTask/Home-Task/Task_4/Task_4/bin/Debug/Task_4.pdb
-/Users/olgalehkikh/Documents/ItAcademy/Lesson 1/HomeTask/Home-Task/Task_4/Task_4/obj/Debug/Task_4.csproj.AssemblyReference.cache
-/Users/olgalehkikh/Documents/ItAcademy/Lesson 1/HomeTask/Home-Task/Task_4/Task_4/obj/Debug/Task_4.csproj.CoreCompileInputs.cache
-/Users/olgalehkikh/Documents/ItAcademy/Lesson 1/HomeTask/Home-Task/Task_4/Task_4/obj/Debug/Task_4.exe
-/Users/olgalehkikh/Documents/ItAcademy/Lesson 1/HomeTask/Home-Task/Task_4/Task_4/obj/Debug/Task_4.pdb
