@@ -12,20 +12,23 @@ namespace Task_3_1
         public static void Main(string[] args)
         {
             int[] userNumbers = new int[6];
-            Console.WriteLine("Введите 6 чисел через пробел");
-            string stringOfNumbers = Console.ReadLine();
-            string[] numbers = stringOfNumbers.Split(' ');
-            int i = 0;
-            foreach (string number in numbers)
-            {
-                
-                int result = Convert.ToInt32(number);
-                userNumbers[i] = result;
-                Console.WriteLine(userNumbers);
-                i += 1;
-
-            }
             
+            for (int number = 0; number < userNumbers.Length; number++)
+            {
+                Console.WriteLine("Введите число");
+                userNumbers.SetValue(Convert.ToInt32(Console.ReadLine()), number);
+            }
+
+
+            Array.Sort(userNumbers);
+            Array.Reverse(userNumbers);
+            Console.WriteLine($"{Environment.NewLine}Ваши числа отсортированы");
+
+            foreach (int number in userNumbers)
+            {
+                Console.WriteLine(number);
+            }
+
         }
     }
 }
