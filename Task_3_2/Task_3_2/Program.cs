@@ -14,11 +14,16 @@ namespace Task_3_2
         {
             int[][] arrayOfArrays = {
                     new int[3]{17,22,30},
-                    new int[3]{6,70,8}
+                    new int[3]{6,70,8},
+                    new int[3]{15, 89,2}
                     };
-           
-         Console.WriteLine($"Максимальное значение первого ряда {arrayOfArrays[0].Max()}");
-         Console.WriteLine($"Максимальное значение второго ряда {arrayOfArrays[1].Max()}");
+            int i = 1;
+            foreach (int[] array in arrayOfArrays)
+            {
+                Console.WriteLine($"Максимальное значение ряда № {i} {array.Max()}");
+                i++;
+            }
+
         }
     }
 }
