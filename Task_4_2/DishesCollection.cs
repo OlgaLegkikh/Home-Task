@@ -73,7 +73,7 @@ namespace Task_4_2
         {
             if (_innerList.Contains(item))
             {
-                Console.WriteLine($"Да позиция \"{item.Name}\" есть в меню");
+                Console.WriteLine($"Да, позиция \"{item.Name}\" есть в меню");
                 return true;
             }
             else
