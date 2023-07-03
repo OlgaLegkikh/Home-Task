@@ -73,12 +73,12 @@ namespace Task_4_2
         {
             if (_innerList.Contains(item))
             {
-                Console.WriteLine($"Да, позиция \"{item.Name}\" есть в меню");
+                Console.WriteLine($"Да, блюдо \"{item.Name}\" есть в меню");
                 return true;
             }
             else
             {
-                Console.WriteLine($"Увы, позиции \"{item.Name}\" нет в меню");
+                Console.WriteLine($"Увы, блюда \"{item.Name}\" нет в меню");
                 return false;
             }
 
