@@ -59,7 +59,6 @@ namespace Task_4_2
         {
             _innerList.Add(item);
             Console.WriteLine($"Добавлено новое блюдо \"{item.Name}\"!");
-            SortByPrice();
             OutputDishesToConsole();
         }
 
