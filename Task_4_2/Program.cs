@@ -15,64 +15,93 @@ namespace Task_4_2
         public static void Main(string[] args)
         {
             var Menu = new DishesCollection<Dish>();
-            var Borsch = new Dish
+            bool isMenuCreationOn = true;
+            while (isMenuCreationOn)
             {
-                Name = "Борщ",
-                Mass = 500,
-                Ingridients = new string[] { "Бульон", "Свекла", "Мамина любовь", "Помидорки" },
-                Price = 0f
-            };
+                
+Console.WriteLine(@"
+Выберите команду:
+1 - Показать меню
+2 - Отсортировать меню по стоимости
+3 - Добавить блюдо и отсортировать меню по стоимости
+4 - Добавить блюдо на определенную позицию
+5 - Очистить меню
+6 - Удалить блюдо на определенной позиции
+7 - Проверить есть ли в меню такое блюдо
+0 - Выйти из создания меню
+");
+                string userInput = Console.ReadLine();
+                switch (userInput)
+                {
+                    case "0":
+                        {
+                            Console.WriteLine("До встречи!");
+                            isMenuCreationOn = false;
+                            break;
+                        }
+                    case "1":
+                        {
+                            Menu.OutputDishesToConsole();
+                            break;
+                        }
+                    case "2":
+                        {
+                            Menu.SortByPrice();
+                            break;
+                        }
+                    case "3":
+                        {
+                            Menu.Add(new Dish());
+                            Menu.SortByPrice();
+                            break;
+                        }
+                    case "4":
+                        {
+                            Menu.Insert(DishPositionInput() - 1, new Dish());
+                            break;
+                        }
+                    case "5":
+                        {
+                            Menu.Clear();
+                            break;
+                        }
+                    case "6":
+                        {
+                            Menu.RemoveAt(DishPositionInput() - 1);
+                            break;
+                        }
+                    case "7":
+                        {
+                            Menu.Contains(new Dish());
+                            break;
+                        }
+                    default:
+                        {
+                            Console.WriteLine("Мне не известна такая команда");
+                            break;
+                        }
+                }
 
-            Menu.Add(Borsch);
-            Menu.Clear();
+            }
 
-            var snaсk = new Dish
-            {
-                Name = "Чипсы",
-                Mass = 200,
-                Price = 4f,
-                Ingridients = new string[] { "Картошечка", "Маслице" }
-            };
+            int DishPositionInput() {
+                Console.WriteLine("Введите позицию");
+                string dishPositionStr = Console.ReadLine();
+                int dishPositionInt;
+                try
+                {
+                    dishPositionInt = Convert.ToInt32(dishPositionStr);
+                    
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Позиция указана в невереном формате");
+                    return DishPositionInput();
+                }
+                
+                return dishPositionInt;
+                }
 
-            Menu.Add(new Dish
-            {
-                Name = "Омлет с грибами",
-                Mass = 200,
-                Price = 5.5f,
-                Ingridients = new string[] { "Яйца", "Шампиньоны", "Сыр", "Молоко" }
-
-            });
-
-            Menu.Add(new Dish
-            {
-                Name = "Шакшука",
-                Mass = 250,
-                Price = 10.5f,
-                Ingridients = new string[] { "Яйца", "Болгарский перец", "Пшеничная лепешка", "Помидоры", "Чеснок"}
-
-            });
-
-            Menu.Add(new Dish
-            {
-                Name = "Гранола",
-                Mass = 250,
-                Price = 5.5f,
-                Ingridients = new string[] { "Овсянка", "Орехи", "Молоко", " Мед", "Корица" }
-
-            });
-
-            Menu.Insert(0, new Dish {
-                Name = "Тост с авокадо",
-                Mass = 120,
-                Price = 3.2f,
-                Ingridients = new string[] {"Авокадо", "Цельнозерновой хлеб", "Лимон", "Яйцо"}
-            });
-
-            Menu.Remove(Borsch);
-            Menu.Contains(snaсk);
-            Menu.Add(snaсk);
-            Menu.Contains(snaсk);
-            Menu.RemoveAt(Menu.IndexOf(snaсk));
 
 
         }

@@ -105,8 +105,15 @@ namespace Task_4_2
 
         public void Insert(int index, T item)
         {
-            _innerList.Insert(index, item);
-            Console.WriteLine($"Блюдо \"{item.Name}\" добавлено в меню на позицию № {index + 1}!");
+            try
+            {
+                _innerList.Insert(index, item);
+                Console.WriteLine($"Блюдо \"{item.Name}\" добавлено в меню на позицию № {index + 1}!");
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                Console.WriteLine("В меню еще нет такой позиции");
+            };
             OutputDishesToConsole();
         }
 
@@ -128,8 +135,16 @@ namespace Task_4_2
 
         public void RemoveAt(int index)
         {
-            Console.WriteLine($"Блюдо \"{_innerList[index].Name}\" удалено из меню!");
-            _innerList.RemoveAt(index);
+            try
+            {
+                _innerList.RemoveAt(index);
+                Console.WriteLine($"Блюдо \"{_innerList[index].Name}\" удалено из меню!");
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                Console.WriteLine("В меню нет такой позиции");
+            }
+            
             OutputDishesToConsole();
 
         }
