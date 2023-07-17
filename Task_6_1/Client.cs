@@ -17,9 +17,9 @@ namespace Task_6_1
             ClientNewsTypes = clientNewsTypes;
         }
 
-        public void RecieveEmail()
+        public void PushNotify()
         {
-            Notify?.Invoke($"Получено новое сообщение  на {this.ClientEmail}");
+            Notify?.Invoke($"Получено новое сообщение  на {this.ClientEmail}. проверьте почту!");
         }
 
     }
