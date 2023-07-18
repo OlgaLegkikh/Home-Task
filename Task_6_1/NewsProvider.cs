@@ -27,7 +27,7 @@ namespace Task_6_1
             if (client.ClientNewsTypes.Contains(this.NewsTypeId))
             {
                 Console.WriteLine($"Отправлена новость \"{this.NewsTitle}\" пользователю {client.ClientName}");
-                client.RecieveEmail();
+                client.PushNotify();
             }
         }
 
