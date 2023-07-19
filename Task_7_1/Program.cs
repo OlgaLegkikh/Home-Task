@@ -14,15 +14,71 @@ namespace Task_7_1
     {
         public static void Main(string[] args)
         {
-            //Хотите создать поле для игры в змеи и лестницы?
-            //Нет - выход из редактора
-            //Да - старт редактора
-            //Размер линии от 5 до 10 (Проверки на соответвие размеру и на формат)
-            Board SNL_board = new Board();
-            //Размер поля мин 2 линии максимум 100(проверка на соответвие размеру линии и формат)
-            //Введите параметры змеи (старт, финиш) повторить до 10% от поля змей
-            //Введите параметры лестницы(старт, финиш) повторить до 10% от поля лестниц
-            //Введите подарки (клетка) до 10% от поля
+
+            User user = new User();
+            Console.WriteLine("Добро пожаловать в редактор для создания борды для игры в Змеи и Лестницы, {0}", user.UserName);
+
+                Board SNL_board = new Board();
+                MoverCollection<Mover> movers = new MoverCollection<Mover>();
+                while (movers.Count <= 10)
+                {
+                    Console.WriteLine("Муверов на борде: {0}. Максимальное количество муверов - 10", movers.Count);
+                    Console.WriteLine("Если муверов достаточно нажмите 0");
+                    Console.WriteLine("Если  хотитe добавить еще мувер нажмите 1");
+                    string userInput = Console.ReadLine();
+                    if (userInput == "0")
+                    {
+                        break;
+                    }
+                    if (userInput == "1")
+                    {
+                    Mover mover = new Mover(SNL_board);
+                    movers.Add(mover);
+                    }
+                    else
+                    {   
+                    Console.WriteLine("Пожалуйста введите корректную команду!");
+                    }
+                }
+            Console.WriteLine("Параметры борды получены, {0}", user.UserName);
+
+            
+            for (int i =1; i <= SNL_board.BoardLength; i++)
+            {
+                Console.BackgroundColor = ConsoleColor.Blue;
+                foreach (Mover mover in movers)
+                    {
+
+                        if (mover.StartCell == i || mover.FinishCell == i)
+                        {
+                            if (mover.MoverType == 0)
+                            {
+                                Console.BackgroundColor = ConsoleColor.Red;
+                            }
+                            if (mover.MoverType == 1)
+                            {
+                                Console.BackgroundColor = ConsoleColor.Green;
+                            }
+
+                        }
+                        
+                    }
+                if (i % SNL_board.BoardLine == 0)
+                {
+                    Console.WriteLine("░");
+                }
+                else
+                {
+                    Console.Write("░");
+                }
+
+
+
+
+            }
+
+
+
         }
     }
 }

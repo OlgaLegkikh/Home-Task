@@ -7,12 +7,12 @@ namespace Task_7_1
 {
     public class Board
     {
-        private int _boardLine;
-        private int _boardLength;
+        public int BoardLine;
+        public int BoardLength;
         public Board()
         {
-            _boardLine = CreateBoardLine();
-            _boardLength = CreateBoardLenght();
+            BoardLine = CreateBoardLine();
+            BoardLength = CreateBoardLenght();
         }
 
         private int CreateBoardLine()
@@ -39,16 +39,16 @@ namespace Task_7_1
         }
 
         private void BoardLineValidate(int boardLine)
-            {
-             if (boardLine<5 || boardLine > 10)
+        {
+            if (boardLine < 5 || boardLine > 10)
             {
                 throw new InvalidBoardParametrException("Размер линии вне диапазона!");
             }
-            }
+        }
 
         private int CreateBoardLenght()
         {
-            Console.WriteLine($"Введите количество клеток на доске. Диапазон от {_boardLine*2} до 100.");
+            Console.WriteLine($"Введите количество клеток на доске. Диапазон от {BoardLine * 2} до 100.");
 
             string userInput = Console.ReadLine();
             try
@@ -70,7 +70,7 @@ namespace Task_7_1
 
         private void BoardLengthValidate(int boardLength)
         {
-            if (boardLength < (this._boardLine*2) || boardLength > 100)
+            if ((boardLength < (this.BoardLine * 2)) || boardLength > 100)
             {
                 throw new InvalidBoardParametrException("Размер поля вне диапазона!");
             }
