@@ -2,6 +2,7 @@
 **/bin/
 
 **/.vs/
+**/packages/
 .DS_Store
 .csproj.user
 .json

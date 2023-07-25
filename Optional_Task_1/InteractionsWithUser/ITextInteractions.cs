@@ -2,5 +2,6 @@
 {
     public interface ITextInteractions
     {
+        string RequestInput(string prompt);
     }
 }
