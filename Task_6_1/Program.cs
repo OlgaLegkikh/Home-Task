@@ -18,20 +18,20 @@ namespace Task_6_1
         {
             List<Client> clientsList = new List<Client>()
             {
-            new Client("Ольк", "olk@gmail.com", new int[] { 2, 4 }),
-            new Client("Дмитрий Петрович", "dim@pe.tr", new int[] { 0, 3 }),
-            new Client("Женя", "телега", new int[] { 1 })
+            new Client("Ольк", "olk@gmail.com", NewsTypes.Погода),
+            new Client("Дмитрий Петрович", "dim@pe.tr", NewsTypes.Юмор),
+            new Client("Женя", "телега", NewsTypes.Спорт)
             };
 
             List<NewsProvider> newsList = new List<NewsProvider>()
             {
-            new NewsProvider("Котик перевернулся на другой бочок", 0),
-            new NewsProvider("На улице было солнечно и ящерки грелись на камушках", 3),
-            new NewsProvider("Счастливый псо помешал проведению футбольного матча в Англии украв мяч", 2),
-            new NewsProvider("Выдрочка скушала много лосося и довольна", 3),
-            new NewsProvider("Звезда тиктока Кот Степан делает :3 ", 4),
-            new NewsProvider("Кабанчики случайно выиграли велогонку во Франции", 2),
-            new NewsProvider("Попугай научился говорить \"ну шо там?\" и был повышен до проджект менеджера", 0)
+            new NewsProvider("Котик перевернулся на другой бочок", NewsTypes.Новости),
+            new NewsProvider("На улице было солнечно и ящерки грелись на камушках", NewsTypes.Погода),
+            new NewsProvider("Счастливый псо помешал проведению футбольного матча в Англии украв мяч", NewsTypes.Спорт),
+            new NewsProvider("Выдрочка скушала много лосося и довольна", NewsTypes.Происшествия),
+            new NewsProvider("Звезда тиктока Кот Степан делает :3 ", NewsTypes.Юмор),
+            new NewsProvider("Кабанчики случайно выиграли велогонку во Франции", NewsTypes.Спорт),
+            new NewsProvider("Попугай научился говорить \"ну шо там?\" и был повышен до проджект менеджера", NewsTypes.Новости)
             };
 
             foreach (Client client in clientsList)
@@ -39,9 +39,10 @@ namespace Task_6_1
                 client.Notify += DisplayMessage;
                 foreach (NewsProvider news in newsList)
                 {
-                    if (client.ClientNewsTypes.Contains(news.NewsTypeId))
+                    if (news.NewsType == client.ClientNewsTypes)
                     {
                         news.SendNews(client);
+                        client.PushNotify();
                     }
                 }
             }

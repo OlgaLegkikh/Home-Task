@@ -6,30 +6,31 @@ namespace Task_6_1
     public class NewsProvider
     {
         public string NewsTitle;
-        public int NewsTypeId;
-        private string[] _newsTypes = {"новости", "погода", "спорт", "происшествия", "юмор"};
+        public NewsTypes NewsType; 
 
-        public NewsProvider(string newsTitle, int newsTypeId)
+        public NewsProvider(string newsTitle, NewsTypes newsType)
         {
             NewsTitle = newsTitle;
-            NewsTypeId = newsTypeId;
+            NewsType = newsType;
             //ShowNewsMetaOnCreation();
         }
 
         private void ShowNewsMetaOnCreation()
         {
-            Console.WriteLine($"Создана новость {this.NewsTitle} типа {this._newsTypes[NewsTypeId]}");
+            Console.WriteLine($"Создана новость {this.NewsTitle} типа {NewsType}");
         }
 
 
         public void SendNews(Client client)
         {
-            if (client.ClientNewsTypes.Contains(this.NewsTypeId))
+            if (client.ClientNewsTypes == this.NewsType)
             {
-                Console.WriteLine($"Отправлена новость \"{this.NewsTitle}\" пользователю {client.ClientName}");
-                client.PushNotify();
+                Console.WriteLine($"Отправлена новость \"{this.NewsTitle}\" типа {NewsType} пользователю {client.ClientName}");
+                
             }
         }
 
     }
+
+    public enum NewsTypes {Новости, Погода, Спорт, Происшествия, Юмор }
 }

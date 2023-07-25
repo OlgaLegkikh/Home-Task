@@ -4,13 +4,13 @@ namespace Task_6_1
     public class Client
     {
 
-        public delegate void NewsHadler(string message);
-        public event NewsHadler Notify;
+        public delegate void NewsHandler(string message);
+        public event NewsHandler Notify;
         public string ClientName;
         public string ClientEmail;
-        public int[] ClientNewsTypes;
+        public NewsTypes ClientNewsTypes;
 
-        public Client(string clientName, string clientEmail, int[] clientNewsTypes)
+        public Client(string clientName, string clientEmail, NewsTypes clientNewsTypes)
         {
             ClientName = clientName;
             ClientEmail = clientEmail;
