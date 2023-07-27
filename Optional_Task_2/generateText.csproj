@@ -30,9 +30,12 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RandomTextGenerator.cs" />
+    <Compile Include="generateText\Program.cs" />
+    <Compile Include="generateText\RandomTextGenerator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="generateText\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
