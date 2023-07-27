@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'With Arguments' ">
+    <StartAction>Project</StartAction>
+    <StartArguments>note.txt 4</StartArguments>
+  </PropertyGroup>
+</Project>

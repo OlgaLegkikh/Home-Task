@@ -28,51 +28,14 @@ namespace Optional_Task_1
     {
         public static void Main(string[] args)
         {
-            var Books = new Library
+            ConsoleInteractions console = new ConsoleInteractions();
+            var Books = new Library();
+            bool isOn = true;
+            while (isOn)
             {
-                Books = new List<Publication>
-                 {
-                     new Publication
-                     {
-                         Name = "Sense and Sensibility",
-                         Authors = new List<Author>
-                         {
-                             new Author
-                             {
-                                 FirstName = "Jane",
-                                 SecondName = "Austen",
-                                 YearOfBirth = 1775
-                             }
-                         },
-                         Language = "English",
-                         IsRead = true
-
-                     },
-                     new Publication
-                     {
-                         Name = "12 Стульев",
-                         Authors = new List<Author>
-                         {
-                             new Author
-                             {
-                                 FirstName = "Илья",
-                                 SecondName = "Ильф",
-                                 YearOfBirth = 1897
-                             },
-                              new Author
-                             {
-                                 FirstName = "Евгений",
-                                 SecondName = "Петров",
-                                 YearOfBirth = 1902
-                             }
-                         },
-                         Language = "русский",
-                         IsRead = false
-
-                     }
-
-                 }
-            };
+                Books
+                
+            }
 
             var option = new JsonSerializerOptions
             {

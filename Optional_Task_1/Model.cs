@@ -5,7 +5,7 @@ namespace Optional_Task_1
 {
 public class Library
     {
-        public List<Publication> Books { get; set; } 
+        public List<Publication> Books { get return ; set; }
     }
 public class Publication
     {
@@ -19,7 +19,7 @@ public class Author
     {
         public string FirstName { get; set; }
         public string SecondName { get; set; }
-        public int YearOfBirth { get; set; }
+        
 
     }
 }
