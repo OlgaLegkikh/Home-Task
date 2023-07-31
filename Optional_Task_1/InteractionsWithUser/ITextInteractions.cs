@@ -3,5 +3,7 @@
     public interface ITextInteractions
     {
         string RequestInput(string prompt);
+        bool RequestInputInBool(string prompt);
+        uint RequestInputInInt(string prompt);
     }
 }

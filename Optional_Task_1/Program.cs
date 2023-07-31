@@ -16,11 +16,7 @@
 //Если пришло — использовать его как имя файла. ;)
 
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text.Encodings.Web;
-using System.Text.Json;
-using System.Text.Unicode;
+
 
 namespace Optional_Task_1
 {
@@ -28,24 +24,8 @@ namespace Optional_Task_1
     {
         public static void Main(string[] args)
         {
-            ConsoleInteractions console = new ConsoleInteractions();
-            var Books = new Library();
-            bool isOn = true;
-            while (isOn)
-            {
-                Books
-                
-            }
 
-            var option = new JsonSerializerOptions
-            {
-                Encoder = JavaScriptEncoder.Create(UnicodeRanges.BasicLatin, UnicodeRanges.Cyrillic),
-                WriteIndented = true
-            };
-            string jsonString = JsonSerializer.Serialize<Library>(Books, option);
-            Console.WriteLine(jsonString);
-            string fileName = "Library.json";
-            File.WriteAllText(fileName, jsonString);
+            JsonCreation json = new JsonCreation();
 
 
 

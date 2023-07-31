@@ -64,6 +64,7 @@
     <Compile Include="Model.cs" />
     <Compile Include="InteractionsWithUser\ITextInteractions.cs" />
     <Compile Include="InteractionsWithUser\ConsoleInteractions.cs" />
+    <Compile Include="JsonCreation.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="InteractionsWithUser\" />
