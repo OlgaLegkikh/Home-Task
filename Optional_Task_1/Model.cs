@@ -9,9 +9,9 @@ public class Library
     }
 public class Publication
     {
-        public string Name { get; set; }
+        public string? Name { get; set; }
         public List<Author> Authors { get; set; }
-        public String Language { get; set; }
+        public string Language { get; set; }
         public bool IsRead { get; set; }
     }
 public class Author
