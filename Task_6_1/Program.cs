@@ -8,47 +8,45 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
+
 
 namespace Task_6_1
 {
     class MainClass
     {
+
         public static void Main(string[] args)
         {
-            List<Client> clientsList = new List<Client>()
-            {
-            new Client("Ольк", "olk@gmail.com", NewsTypes.Погода),
-            new Client("Дмитрий Петрович", "dim@pe.tr", NewsTypes.Юмор),
-            new Client("Женя", "телега", NewsTypes.Спорт)
-            };
+            var newsProvider1 = new NewsProvider(NewsTypes.Новости);
+            var newsProvider2 = new NewsProvider(NewsTypes. Спорт);
+            var client1 = new Client("Ольк", "olk@gmail.com", newsProvider1);
+            var client2 = new Client("Дмитрий Петрович", "какой-то имейл", newsProvider2);
+            var provider = new Provider();
+            provider.Main();
 
-            List<NewsProvider> newsList = new List<NewsProvider>()
-            {
-            new NewsProvider("Котик перевернулся на другой бочок", NewsTypes.Новости),
-            new NewsProvider("На улице было солнечно и ящерки грелись на камушках", NewsTypes.Погода),
-            new NewsProvider("Счастливый псо помешал проведению футбольного матча в Англии украв мяч", NewsTypes.Спорт),
-            new NewsProvider("Выдрочка скушала много лосося и довольна", NewsTypes.Происшествия),
-            new NewsProvider("Звезда тиктока Кот Степан делает :3 ", NewsTypes.Юмор),
-            new NewsProvider("Кабанчики случайно выиграли велогонку во Франции", NewsTypes.Спорт),
-            new NewsProvider("Попугай научился говорить \"ну шо там?\" и был повышен до проджект менеджера", NewsTypes.Новости)
-            };
+            provider.SubscribeOnNews(client1);
+            provider.SubscribeOnNews(client2);
 
-            foreach (Client client in clientsList)
+
+
+
+            List<News> newsList = new List<News>()
             {
-                client.Notify += DisplayMessage;
-                foreach (NewsProvider news in newsList)
-                {
-                    if (news.NewsType == client.ClientNewsTypes)
-                    {
-                        news.SendNews(client);
-                        client.PushNotify();
-                    }
-                }
+            new News("Котик перевернулся на другой бочок", NewsTypes.Новости),
+            new News("На улице было солнечно и ящерки грелись на камушках", NewsTypes.Погода),
+            new News("Счастливый псо помешал проведению футбольного матча в Англии украв мяч", NewsTypes.Спорт),
+            new News("Выдрочка скушала много лосося и довольна", NewsTypes.Происшествия),
+            new News("Звезда тиктока Кот Степан делает :3 ", NewsTypes.Юмор),
+            new News("Кабанчики случайно выиграли велогонку во Франции", NewsTypes.Спорт),
+            new News("Попугай научился говорить \"ну шо там?\" и был повышен до проджект менеджера", NewsTypes.Новости)
+            };
+            foreach (News news in newsList)
+            {
+                provider.SendNewsToCurrentTypeProvider(news);
             }
-
-            void DisplayMessage(string message) => Console.WriteLine(message);
-
         }
     }
+
+    
+
 }

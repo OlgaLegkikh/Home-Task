@@ -1,33 +1,43 @@
 ﻿using System;
 using System.Linq;
 
+
+
 namespace Task_6_1
 {
+    public delegate void SendNewsDelegate(News news);
+
+    public class News
+    {
+        public NewsTypes Type;
+        public string Title;
+
+        public News(string title,NewsTypes type)
+        {
+            Type = type;
+            Title = title;
+        }
+    }
+
     public class NewsProvider
     {
-        public string NewsTitle;
-        public NewsTypes NewsType; 
+        public NewsTypes Type;
+        public event SendNewsDelegate NewsDelegate;
 
-        public NewsProvider(string newsTitle, NewsTypes newsType)
-        {
-            NewsTitle = newsTitle;
-            NewsType = newsType;
-            //ShowNewsMetaOnCreation();
-        }
 
-        private void ShowNewsMetaOnCreation()
+        public NewsProvider(NewsTypes newsType)
         {
-            Console.WriteLine($"Создана новость {this.NewsTitle} типа {NewsType}");
+     
+            Type = newsType;
+            
         }
 
 
-        public void SendNews(Client client)
+        public void SendNews(News news)
         {
-            if (client.ClientNewsTypes == this.NewsType)
-            {
-                Console.WriteLine($"Отправлена новость \"{this.NewsTitle}\" типа {NewsType} пользователю {client.ClientName}");
-                
-            }
+            Console.WriteLine($"Отправлена новость {news.Title} типа {news.Type}");
+            NewsDelegate?.Invoke(news);
+
         }
 
     }

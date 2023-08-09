@@ -1,26 +1,33 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace Task_6_1
 {
     public class Client
     {
 
-        public delegate void NewsHandler(string message);
-        public event NewsHandler Notify;
         public string ClientName;
         public string ClientEmail;
-        public NewsTypes ClientNewsTypes;
+        public NewsTypes Type;
 
-        public Client(string clientName, string clientEmail, NewsTypes clientNewsTypes)
+        public Client(string clientName, string clientEmail, NewsProvider provider)
         {
+            provider.NewsDelegate += RecieveNews;
             ClientName = clientName;
             ClientEmail = clientEmail;
-            ClientNewsTypes = clientNewsTypes;
+            Type = provider.Type;
         }
 
-        public void PushNotify()
-        {
-            Notify?.Invoke($"Получено новое сообщение  на {this.ClientEmail}. проверьте почту!");
-        }
+            public void RecieveNews(News news)
+            {
+
+                if (news.Type == Type)
+                {
+                    Console.WriteLine($"{ClientName}, получена новость \"{news.Title}\"!");
+                }
+
+            }
+ 
 
     }
 }
